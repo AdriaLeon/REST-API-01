@@ -8,6 +8,7 @@ from app import repositories
 
 next_id = 1
 
+# Translates the task schema into a task model and saves it to the database
 def create_task(db: Session, task: TaskCreate):
 
     new_task = TaskModel(
