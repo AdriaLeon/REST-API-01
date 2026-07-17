@@ -1,9 +1,11 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
 
-DATABASE_URL = (
-    "mysql+pymysql://root:PruebasSQL2026@localhost:3306/task_api" # Created on MYSQL Workbench with: CREATE DATABASE IF NOT EXISTS task_api;
-)
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 

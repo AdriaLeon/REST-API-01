@@ -16,7 +16,7 @@ def health():
     return {"status": "ok"}
 
 @router.post("/tasks")
-def create_task(task: TaskCreate, db: Session = Depends(get_db),):
+def create_task(task: TaskCreate, db: Session = Depends(get_db),): # Depends ensures we have and actual session before processing the request
     return services.create_task(db, task)
 
 @router.get("/tasks")
